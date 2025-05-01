@@ -84,7 +84,7 @@ Streamify follows a standard client-server architecture:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/streamify-video-calls.git](https://github.com/your-username/streamify-video-calls.git)
+    git clone [https://github.com/AkshayTiwari27/Streamify.git](https://github.com/AkshayTiwari27/Streamify.git)
     cd streamify-video-calls
     ```
 
@@ -144,15 +144,41 @@ Streamify follows a standard client-server architecture:
 
 ---
 
-## ☁️ Deployment Notes
+## 💡 Usage
 
-* **Backend (Node.js/Express):** Can be deployed to platforms like [Render](https://render.com/), [Fly.io](https://fly.io/), Heroku, etc. Remember to configure the production environment variables (`MONGO_URI`, `STEAM_API_KEY`, `STEAM_API_SECRET`, `JWT_SECRET_KEY`, `NODE_ENV=production`) on the hosting platform.
-* **Frontend (React/Vite):** Can be deployed as a static site to platforms like [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), GitHub Pages, Render, etc.
-    * Run `npm run build` in the `frontend` directory.
-    * Deploy the generated `dist` folder.
-    * Ensure the `VITE_STREAM_API_KEY` environment variable is set during the build process on your deployment platform.
-    * Configure your backend deployment URL if needed (e.g., if `axiosInstance` needs to point to a different production URL). Currently, it defaults to `/api` in production mode (`frontend/src/lib/axios.js`), assuming frontend and backend are served from the same domain or a proxy is set up.
+1.  **Sign Up:** Create a new account.
+2.  **Log In:** Access your account.
+3.  **Onboarding:** Complete your profile by adding your bio, native/learning languages, and location.
+4.  **Homepage:** View your current friends and discover recommended users.
+5.  **Add Friends:** Send friend requests to recommended users.
+6.  **Notifications:** Check for incoming friend requests and accept them.
+7.  **Chat:** Click "Message" on a friend's card to start a real-time chat.
+8.  **Video Call:** Initiate a video call from within the chat interface.
 
 ---
 
-*(Optional: Add sections for Contributing, License, Contact, etc. here)*
+## 🤝 Contributing (Optional)
+
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+3.  Make your changes.
+4.  Commit your changes (`git commit -m 'Add some feature'`).
+5.  Push to the branch (`git push origin feature/your-feature-name`).
+6.  Open a Pull Request.
+
+---
+
+## 📜 License (Optional)
+
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details (if you add one).
+
+---
+
+## 🙏 Acknowledgements (Optional)
+
+* Thanks to [Stream](https://getstream.io/) for their powerful Chat and Video APIs.
+* Thanks to the creators of the libraries and frameworks used.
+
+---

@@ -1,8 +1,5 @@
 <h1 align="center">✨ Streamify - Fullstack Language Exchange & Communication Platform ✨</h1>
 
-<p align="center">
-  <img src="./frontend/public/screenshot-for-readme.png" alt="Streamify Demo Screenshot" width="700">
-</p>
 
 <p align="center">
   <strong>Connect, chat, and video call with language partners worldwide!</strong> Streamify is a feature-rich, full-stack application designed to facilitate language exchange through seamless real-time communication. Built with a modern MERN-like stack (MongoDB, Express, React, Node.js) and powered by the robust Stream API for chat and video functionalities.

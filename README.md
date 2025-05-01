@@ -1,55 +1,158 @@
-<h1 align="center">✨ Fullstack Chat & Video Calling App ✨</h1>
+<h1 align="center">✨ Streamify - Fullstack Language Exchange & Communication Platform ✨</h1>
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+<p align="center">
+  <img src="./frontend/public/screenshot-for-readme.png" alt="Streamify Demo Screenshot" width="700">
+</p>
 
-Highlights:
-
-- 🌐 Real-time Messaging with Typing Indicators & Reactions
-- 📹 1-on-1 and Group Video Calls with Screen Sharing & Recording
-- 🔐 JWT Authentication & Protected Routes
-- 🌍 Language Exchange Platform with 32 Unique UI Themes
-- ⚡ Tech Stack: React + Express + MongoDB + TailwindCSS + TanStack Query
-- 🧠 Global State Management with Zustand
-- 🚨 Error Handling (Frontend & Backend)
-- 🚀 Free Deployment
-- 🎯 Built with Scalable Technologies like Stream
-- ⏳ And much more!
+<p align="center">
+  <strong>Connect, chat, and video call with language partners worldwide!</strong> Streamify is a feature-rich, full-stack application designed to facilitate language exchange through seamless real-time communication. Built with a modern MERN-like stack (MongoDB, Express, React, Node.js) and powered by the robust Stream API for chat and video functionalities.
+</p>
 
 ---
 
-## 🧪 .env Setup
+## 🚀 Live Demo
 
-### Backend (`/backend`)
+You can check out the live deployed version of Streamify here:
 
-```
-PORT=5001
-MONGO_URI=your_mongo_uri
-STEAM_API_KEY=your_steam_api_key
-STEAM_API_SECRET=your_steam_api_secret
-JWT_SECRET_KEY=your_jwt_secret
-NODE_ENV=development
-```
+**[➡️ Click here to visit Streamify Live!](https://streamify-n7eu.onrender.com/)**
 
-### Frontend (`/frontend`)
-
-```
-VITE_STREAM_API_KEY=your_stream_api_key
-```
+*(Note: You will need to sign up for an account to explore the features.)*
 
 ---
 
-## 🔧 Run the Backend
+## 🌟 Key Features
 
-```bash
-cd backend
-npm install
-npm run dev
-```
+* **🌐 Real-time Messaging:** Instant one-on-one chat leveraging the **[Stream Chat SDK](https://getstream.io/chat/sdk/react/)**. Includes typing indicators, read receipts, and message reactions out-of-the-box.
+* **📹 Real-time Video Calling:** High-quality one-on-one video calls powered by the **[Stream Video SDK](https://getstream.io/video/sdk/react/)**. Features include speaker layouts and call controls.
+* **🤝 Language Exchange Focus:** Users specify native and learning languages during onboarding, enabling targeted connections. Language flags are displayed for easy identification.
+* **🔍 User Discovery & Recommendations:** Find new language partners based on language goals and exclude existing friends or users who haven't completed onboarding.
+* **👥 Robust Friend System:**
+    * Send, receive, and accept friend requests.
+    * View friends list and outgoing pending requests.
+    * Backend logic prevents duplicate requests and self-requests.
+* **🔔 Notification System:** Real-time updates for incoming friend requests and newly accepted connections.
+* **🔐 Secure Authentication:**
+    * User signup with password hashing (`bcryptjs`).
+    * Login with JWT (JSON Web Tokens) securely stored in HttpOnly cookies.
+    * Protected backend routes using custom authentication middleware.
+* **👤 User Onboarding Flow:** A dedicated process for new users to set up their profile details (bio, languages, location, avatar) before accessing the main app. Includes random avatar generation.
+* **🎨 Highly Customizable Theming:** Choose from **30+ themes** via DaisyUI, easily selectable through a UI dropdown, with state managed by Zustand.
+* **📱 Responsive Design:** Built with Tailwind CSS and DaisyUI for a seamless experience across devices.
+* **⚡ Modern & Efficient Frontend:**
+    * Built with React and Vite for fast development and optimized builds.
+    * Uses **TanStack Query (React Query)** for efficient data fetching, caching, and server state synchronization.
+    * Leverages **Zustand** for simple, lightweight global client state management (theme).
+    * Custom hooks (`useAuthUser`, `useLogin`, `useSignUp`, `useLogout`) for clean component logic.
+* **🚀 Scalable Backend:**
+    * Node.js & Express REST API.
+    * MongoDB database with Mongoose ODM for structured data modeling (`User`, `FriendRequest` schemas).
+    * Clear API routing structure (`auth`, `users`, `chat`).
+* **☁️ Deployment Ready:** Includes scripts for building the frontend and starting the backend, suitable for platforms like Render, Vercel, Netlify etc.
 
-## 💻 Run the Frontend
+---
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## 🛠️ Tech Stack
+
+* **Frontend:** React (Vite), JavaScript, Tailwind CSS, DaisyUI, TanStack Query, Zustand, Axios, Stream Chat SDK, Stream Video SDK, React Router, Lucide React (Icons)
+* **Backend:** Node.js, Express.js, Mongoose, JWT (jsonwebtoken), bcryptjs, Stream SDK (Server), cookie-parser, cors, dotenv
+* **Database:** MongoDB
+* **APIs/Services:** Stream (Chat & Video)
+
+---
+
+## 🏗️ Architecture Overview
+
+Streamify follows a standard client-server architecture:
+
+1.  **Frontend (React):** Handles the user interface, client-side routing, state management (UI state via Zustand, server state via TanStack Query), and interacts with the backend API and Stream SDKs.
+2.  **Backend (Node.js/Express):** Provides a RESTful API for authentication, user management, friend requests, and generating Stream tokens. Interacts with the MongoDB database and Stream's server-side APIs.
+3.  **Database (MongoDB):** Stores user profiles, friend relationships, and friend request data.
+4.  **Stream Platform:** Offloads the heavy lifting for real-time chat and video infrastructure, providing SDKs for seamless integration.
+
+---
+
+## 📋 Prerequisites
+
+* Node.js (v18 or higher recommended)
+* npm (v8+) or yarn
+* MongoDB instance (local installation or a free cloud instance from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+* A [Stream](https://getstream.io/) account (free tier available) to obtain API keys for Chat and Video.
+
+---
+
+## ⚙️ Setup & Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/streamify-video-calls.git](https://github.com/your-username/streamify-video-calls.git)
+    cd streamify-video-calls
+    ```
+
+2.  **Set up Backend Environment Variables:**
+    * Navigate to the `backend` directory: `cd backend`
+    * Create a `.env` file in this directory.
+    * Add the required variables:
+
+        ```env
+        PORT=5001
+        # Get from MongoDB Atlas or your local setup
+        MONGO_URI=your_mongodb_connection_string
+        # Get from your Stream Dashboard (getstream.io)
+        STEAM_API_KEY=your_stream_api_key
+        STEAM_API_SECRET=your_stream_api_secret
+        # Generate a strong random string (e.g., using a password manager or online generator)
+        JWT_SECRET_KEY=your_strong_jwt_secret_key
+        # Set to 'production' for deployment, 'development' for local run
+        NODE_ENV=development
+        ```
+
+3.  **Set up Frontend Environment Variables:**
+    * Navigate to the `frontend` directory: `cd ../frontend` (from `backend`)
+    * Create a `.env` file in this directory.
+    * Add the required variable:
+
+        ```env
+        # Use the same Stream API Key as in the backend .env
+        VITE_STREAM_API_KEY=your_stream_api_key
+        ```
+
+4.  **Install Dependencies:**
+    * Install backend dependencies:
+        ```bash
+        cd ../backend # Or 'cd backend' from root
+        npm install
+        ```
+    * Install frontend dependencies:
+        ```bash
+        cd ../frontend # Or 'cd frontend' from root
+        npm install
+        ```
+
+5.  **Run the Application:**
+    * **Start the Backend:** (Terminal 1, in the `backend` directory)
+        ```bash
+        npm run dev
+        ```
+        *(The backend server should start, typically on port 5001, and connect to MongoDB).*
+    * **Start the Frontend:** (Terminal 2, in the `frontend` directory)
+        ```bash
+        npm run dev
+        ```
+        *(Vite will start the development server, usually on port 5173).*
+
+6.  **Access the App:** Open your browser and navigate to `http://localhost:5173` (or the port shown in the frontend terminal).
+
+---
+
+## ☁️ Deployment Notes
+
+* **Backend (Node.js/Express):** Can be deployed to platforms like [Render](https://render.com/), [Fly.io](https://fly.io/), Heroku, etc. Remember to configure the production environment variables (`MONGO_URI`, `STEAM_API_KEY`, `STEAM_API_SECRET`, `JWT_SECRET_KEY`, `NODE_ENV=production`) on the hosting platform.
+* **Frontend (React/Vite):** Can be deployed as a static site to platforms like [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), GitHub Pages, Render, etc.
+    * Run `npm run build` in the `frontend` directory.
+    * Deploy the generated `dist` folder.
+    * Ensure the `VITE_STREAM_API_KEY` environment variable is set during the build process on your deployment platform.
+    * Configure your backend deployment URL if needed (e.g., if `axiosInstance` needs to point to a different production URL). Currently, it defaults to `/api` in production mode (`frontend/src/lib/axios.js`), assuming frontend and backend are served from the same domain or a proxy is set up.
+
+---
+
+*(Optional: Add sections for Contributing, License, Contact, etc. here)*

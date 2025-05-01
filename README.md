@@ -47,7 +47,6 @@ You can check out the live deployed version of Streamify here:
     * Node.js & Express REST API.
     * MongoDB database with Mongoose ODM for structured data modeling (`User`, `FriendRequest` schemas).
     * Clear API routing structure (`auth`, `users`, `chat`).
-* **☁️ Deployment Ready:** Includes scripts for building the frontend and starting the backend, suitable for platforms like Render, Vercel, Netlify etc.
 
 ---
 
